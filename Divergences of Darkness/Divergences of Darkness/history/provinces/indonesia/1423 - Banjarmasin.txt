@@ -1,5 +1,6 @@
-owner = KLM
-controller = KLM
+owner = VOC
+controller = VOC
+add_core = VOC
 add_core = KLM
 add_core = NUS
 trade_goods = sulphur

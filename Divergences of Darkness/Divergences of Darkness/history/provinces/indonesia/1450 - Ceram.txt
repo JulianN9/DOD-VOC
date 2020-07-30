@@ -1,7 +1,7 @@
-owner = SCA
-controller = SCA
+owner = VOC
+controller = VOC
+add_core = VOC
 add_core = NUS
 add_core = MKS
 trade_goods = grain
 life_rating = 32
-colonial = 1

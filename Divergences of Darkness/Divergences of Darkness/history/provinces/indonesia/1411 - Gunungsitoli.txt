@@ -1,5 +1,6 @@
-owner = PLM
-controller = PLM
+owner = VOC
+controller = VOC
+add_core = VOC
 add_core = NUS
 add_core = ATJ
 add_core = PLM

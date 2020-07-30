@@ -73,3 +73,11 @@ vassal = {
 	start_date = 1836.1.1
 	end_date = 1937.1.1
 }
+
+# Burgundian vassals in the east indies
+vassal = {
+	first BRG
+	second = VOC
+	start_date = 1815.11.9
+	end_date = 1937.1.1
+}

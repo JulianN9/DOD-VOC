@@ -132,6 +132,7 @@ TUI		= "countries/Tui Tonga.txt"
 PPU		= "countries/Papua.txt"
 MAC		= "countries/Macedonia.txt"
 TJK		= "countries/Tajik.txt"
+VOC     = "countries/VOC.txt"
 SIL		= "countries/Silesia.txt"	
 
 ##HPM

@@ -1,5 +1,6 @@
-owner = JAV
-controller = JAV
+owner = VOC
+controller = VOC
+add_core = VOC
 add_core = JAV
 add_core = NUS
 trade_goods = sulphur

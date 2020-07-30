@@ -1,6 +1,6 @@
-owner = JAV
-controller = JAV
-add_core = JAV
+owner = VOC
+controller = VOC
+add_core = VOC
 add_core = NUS
 trade_goods = sulphur
 life_rating = 35

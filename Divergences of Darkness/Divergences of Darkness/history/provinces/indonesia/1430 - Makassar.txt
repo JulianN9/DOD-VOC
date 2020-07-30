@@ -1,5 +1,6 @@
-owner = MKS
-controller = MKS
+owner = VOC
+controller = VOC
+add_core = VOC
 add_core = MKS
 add_core = NUS
 trade_goods = timber
