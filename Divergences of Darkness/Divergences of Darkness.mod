@@ -1,3 +1,3 @@
-name = "Divergences of Darkness"
+name = "Divergences of Darkness - VOC"
 path = "mod/Divergences of Darkness"
-user_dir = "DoD"
+user_dir = "DoDVOC"
