@@ -1,11 +1,6 @@
-owner = KTI
-controller = KTI
-add_core = KTI
+owner = BLG
+controller = BLG
+add_core = BLG
 add_core = NUS
 trade_goods = sulphur
 life_rating = 20
-1860.1.1 = {
-	owner = NET
-	controller = NET
-	colonial = 2
-}

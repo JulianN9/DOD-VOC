@@ -1,5 +1,6 @@
-owner = TNG
-controller = TNG
+owner = SCA
+controller = SCA
 add_core = TON
 trade_goods = grain
 life_rating = 35
+colonial = 1

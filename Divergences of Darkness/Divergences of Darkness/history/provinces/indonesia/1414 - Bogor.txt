@@ -1,5 +1,6 @@
-owner = JAV
-controller = JAV
+owner = BTM
+controller = BTM
+add_core = BTM
 add_core = JAV
 add_core = NUS
 trade_goods = coffee

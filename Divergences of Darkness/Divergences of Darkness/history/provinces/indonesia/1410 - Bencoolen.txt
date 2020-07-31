@@ -1,5 +1,6 @@
-owner = PLM
-controller = PLM
+owner = PAG
+controller = PAG
+add_core = PAG
 add_core = ATJ
 add_core = NUS
 add_core = PLM

@@ -1,6 +1,7 @@
-owner = BRU
-controller = BRU
+owner = SPA
+controller = SPA
 add_core = BRU
 add_core = NUS
 trade_goods = timber
 life_rating = 30
+colonial = 1

@@ -1,6 +1,6 @@
-owner = LFG
-controller = LFG
-add_core = LFG
+owner = TNJ
+controller = TNJ
+add_core = TNJ
 add_core = NUS
 trade_goods = grain
 life_rating = 30

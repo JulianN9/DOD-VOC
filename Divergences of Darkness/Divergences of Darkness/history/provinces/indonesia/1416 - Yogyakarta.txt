@@ -1,5 +1,6 @@
-owner = JAV
-controller = JAV
+owner = YOG
+controller = YOG
+add_core = YOG
 add_core = JAV
 add_core = NUS
 trade_goods = fruit

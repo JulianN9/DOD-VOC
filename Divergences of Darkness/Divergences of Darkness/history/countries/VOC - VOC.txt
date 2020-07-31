@@ -35,7 +35,7 @@ child_labor = child_labor_legal
 citizens_rights = culture_voting_only
 border_policy = quota_immigration
 
-ruling_party = BRG_liberal_1
+ruling_party = VOC_liberal_1
 upper_house = {
 	fascist = 0
 	liberal = 1

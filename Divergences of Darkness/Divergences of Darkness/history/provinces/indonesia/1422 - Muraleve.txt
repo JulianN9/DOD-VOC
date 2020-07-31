@@ -1,6 +1,6 @@
-owner = KLM
-controller = KLM
-add_core = KLM
+owner = BLG
+controller = BLG
+add_core = BLG
 add_core = NUS
 trade_goods = grain
 life_rating = 15

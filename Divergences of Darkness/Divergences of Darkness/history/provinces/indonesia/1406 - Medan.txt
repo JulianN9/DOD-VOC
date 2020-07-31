@@ -1,5 +1,6 @@
-owner = ATJ
-controller = ATJ
+owner = DEL
+controller = DEL
+add_core = DEL
 add_core = ATJ
 add_core = NUS
 trade_goods = tobacco
