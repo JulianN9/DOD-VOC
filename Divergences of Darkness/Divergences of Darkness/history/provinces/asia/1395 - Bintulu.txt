@@ -1,6 +1,6 @@
-owner = BLG
-controller = BLG
-add_core = BLG
+owner = PON
+controller = PON
+add_core = PON
 add_core = NUS
 trade_goods = timber
 life_rating = 30
