@@ -1,6 +1,6 @@
 country_event = {
 		
-	id = 32410 # Burgundy civil war releases the VOC
+	id = 32420 # Burgundy civil war releases the VOC
 	
 	is_triggered_only = yes
 
@@ -12,12 +12,12 @@ country_event = {
 		days = 15
 	}
 
-	title = "32410.T"
-	desc = "32410.D"
+	title = "32420.T"
+	desc = "32420.D"
 	picture = "?"
 		
 	option = {
-		name = "32410.A"
+		name = "32420.A"
 		VOC = {
 			release_vassal = THIS
 			create_vassal = TNJ
@@ -29,7 +29,7 @@ country_event = {
 			create_vassal = BUT
 		}
 		country_event = {
-			id = 32411
+			id = 32421
 			days = 15
 		}
 	}
@@ -37,17 +37,17 @@ country_event = {
 
 country_event = {
 		
-	id = 32411 #
+	id = 32421 #
 	
 	is_triggered_only = yes
 
 
-	title = "32411.T"
-	desc = "32411.D"
+	title = "32421.T"
+	desc = "32421.D"
 	picture = "?"
 		
 	option = {
-		name = "98411.A" # At last
+		name = "32421.A" # At last
 		prestige = 5
 		any_pop = {
 			militancy = -1
