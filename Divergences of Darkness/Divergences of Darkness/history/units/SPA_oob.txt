@@ -1,3 +1,15 @@
+PAT = {
+	value = 125		#relation
+	level = 5		#3=cordial, 4 = friendly, 5 sphere
+	influence_value = 100
+}
+
+SUL = {
+	value = 125		#relation
+	level = 5		#3=cordial, 4 = friendly, 5 sphere
+	influence_value = 100
+}
+
 VIJ = {
 	value = 125		#relation
 	level = 5		#3=cordial, 4 = friendly, 5 sphere
@@ -78,7 +90,7 @@ leader = {
 
 #Army
 army = {
-	name = "Ejército Real"
+	name = "Ejï¿½rcito Real"
 	location = 487
 	regiment = {
 		name= "1. Granaderos del Rey"
@@ -93,7 +105,7 @@ army = {
 	}     
 	
 	regiment = {
-		name= "6. Brigada de Infantería 'La Granja'"
+		name= "6. Brigada de Infanterï¿½a 'La Granja'"
 		type = infantry
 		home = 487
 	}
@@ -106,23 +118,23 @@ army = {
 }
   
 army = {
-	name = "Ejército Colombian" 
+	name = "Ejï¿½rcito Colombian" 
 	location = 2183 
 
 	regiment = {
-		name= "1. Brigada de Infantería 'El Ramillete'"
+		name= "1. Brigada de Infanterï¿½a 'El Ramillete'"
 		type = infantry
 		home = 477
 	}
 
 	regiment = {
-		name= "2. Brigada de Infantería"
+		name= "2. Brigada de Infanterï¿½a"
 		type = infantry
 		home = 477
 	}
 
 	regiment = {
-		name= "3. Brigada de Infantería"
+		name= "3. Brigada de Infanterï¿½a"
 		type = artillery
 		home = 477
 	}        
@@ -147,37 +159,37 @@ army = {
 }
 
 army = {
-	name = "Ejército del Rabat"
+	name = "Ejï¿½rcito del Rabat"
 	location = 1685
 	
 	regiment = {
-		name= "4. Brigada de Infantería 'San Jorge'"
+		name= "4. Brigada de Infanterï¿½a 'San Jorge'"
 		type = infantry
 		home = 487
 	}
 
 	regiment = {
-		name= "1. Brigada de Artillería"
+		name= "1. Brigada de Artillerï¿½a"
 		type = infantry
 		home = 487
 	}
 	
 	regiment = {
-		name= "5. Brigada de Infantería"
+		name= "5. Brigada de Infanterï¿½a"
 		type = infantry
 		home = 487
 	}
   
 
 	regiment = {
-		name= "9. Brigada de Infantería"
+		name= "9. Brigada de Infanterï¿½a"
 		type = hussar
 		home = 1688
 	}
 }
 
 army = {
-	name = "Ejército del Sur"
+	name = "Ejï¿½rcito del Sur"
 	location = 2270
 	regiment = {
 		name= "1. Granaderos del Rey"
@@ -198,19 +210,19 @@ army = {
 	}
 
 	regiment = {
-		name= "1. Brigada de Infantería 'El Ramillete'"
+		name= "1. Brigada de Infanterï¿½a 'El Ramillete'"
 		type = infantry
 		home = 484
 	}
 
 	regiment = {
-		name= "2. Brigada de Infantería"
+		name= "2. Brigada de Infanterï¿½a"
 		type = infantry
 		home = 512
 	}
 
 	regiment = {
-		name= "3. Brigada de Infantería"
+		name= "3. Brigada de Infanterï¿½a"
 		type = artillery
 		home = 512
 	}
@@ -242,71 +254,71 @@ army = {
 
 
 	regiment = {
-		name= "1. Brigada de Infantería"
+		name= "1. Brigada de Infanterï¿½a"
 		type = infantry
 		home = 521
 	}
 
 		regiment = {
-		name= "2. Brigada de Infantería"
+		name= "2. Brigada de Infanterï¿½a"
 		type = infantry
 		home = 521
 	}
 }
 army = {
-	name = "Ejército del Habana"
+	name = "Ejï¿½rcito del Habana"
 	location = 132
 
 	regiment = {
-		name= "4. Brigada de Infantería 'San Jorge'"
+		name= "4. Brigada de Infanterï¿½a 'San Jorge'"
 		type = infantry
 		home = 1683
 	}
 
 	regiment = {
-		name= "1. Brigada de Artillería"
+		name= "1. Brigada de Artillerï¿½a"
 		type = infantry
 		home = 1685
 	}
 	
 	regiment = {
-		name= "5. Brigada de Infantería"
+		name= "5. Brigada de Infanterï¿½a"
 		type = infantry
 		home = 1685
 	}            
 	
 	regiment = {
-		name= "5. Brigada de Infantería"
+		name= "5. Brigada de Infanterï¿½a"
 		type = infantry
 		home = 2209
 	}           
 	
 	regiment = {
-		name= "8. Brigada de Infantería 'La Granja'"
+		name= "8. Brigada de Infanterï¿½a 'La Granja'"
 		type = hussar
 		home = 2209
 	}
 }
 
 army = {
-	name = "Ejército del Rangoon"
+	name = "Ejï¿½rcito del Rangoon"
 	location = 1330
 	
 	regiment = {
-		name= "4. Brigada de Infantería 'San Jorge'"
+		name= "4. Brigada de Infanterï¿½a 'San Jorge'"
 		type = infantry
 		home = 2134
 	}
 
 	regiment = {
-		name= "1. Brigada de Artillería"
+		name= "1. Brigada de Artillerï¿½a"
 		type = infantry
 		home = 1330
 	}
 }
 
 navy = {
-	name = "Armada Real Española"
+	name = "Armada Real Espaï¿½ola"
 	location = 517
 	ship = {
 		name= "San Raimundo"
@@ -314,7 +326,7 @@ navy = {
 	}
 
 	ship = {
-		name= "Héroe"
+		name= "Hï¿½roe"
 		type = manowar
 	}
 
@@ -344,7 +356,7 @@ navy = {
 	}
 	
 	ship = {
-		name = "Hespérides"
+		name = "Hespï¿½rides"
 		type = manowar
 	}
 	
@@ -404,12 +416,12 @@ navy = {
 	}
 
 	ship = {
-		name= "Nuestra Señora de Asunción"
+		name= "Nuestra Seï¿½ora de Asunciï¿½n"
 		type = frigate
 	}
 
 	ship = {
-		name= "Nuestra Señora de Atocha"
+		name= "Nuestra Seï¿½ora de Atocha"
 		type = frigate
 	}
 
@@ -429,12 +441,12 @@ navy = {
 	}
 	
 	ship = {
-		name = "Cristóbal Colón"
+		name = "Cristï¿½bal Colï¿½n"
 		type = frigate
 	}
 	
 	ship = {
-		name = "Nuestra Señora del Patrocinio"
+		name = "Nuestra Seï¿½ora del Patrocinio"
 		type = frigate
 	}
 
@@ -489,7 +501,7 @@ navy = {
 	}
 
 	ship = {
-		name= "Asunción"
+		name= "Asunciï¿½n"
 		type = frigate
 	}
 

@@ -1,8 +1,15 @@
 JOH = {
 	value = 120		#relation
-	level = 3		#3=cordial, 4 = friendly, 5 sphere
+	level = 5		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 25
 }
+
+TER = {
+	value = 120		#relation
+	level = 5		#3=cordial, 4 = friendly, 5 sphere
+	influence_value = 100
+}
+
 
 NOV = {
 	value = 150		#relation
@@ -833,12 +840,12 @@ navy = {
 	}
 
 	ship = {
-		name= "Äran"
+		name= "ï¿½ran"
 		type = manowar
 	}
 
 	ship = {
-		name= "Försiktigheten"
+		name= "Fï¿½rsiktigheten"
 		type = manowar
 	}
 
@@ -943,7 +950,7 @@ navy = {
 	}
 	
 	ship = {
-		name= "Fäderneslandet"
+		name= "Fï¿½derneslandet"
 		type = manowar
 	}
 

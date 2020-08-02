@@ -81,3 +81,52 @@ vassal = {
 	start_date = 1815.11.9
 	end_date = 1937.1.1
 }
+
+vassal = {
+	first = BRG
+	second = PLM
+	start_date = 1815.11.9
+	end_date = 1937.1.1
+}
+
+vassal = {
+	first = BRG
+	second = BTM
+	start_date = 1815.11.9
+	end_date = 1937.1.1
+}
+
+vassal = {
+	first = BRG
+	second = YOG
+	start_date = 1815.11.9
+	end_date = 1937.1.1
+}
+
+vassal = {
+	first = BRG
+	second = BLG
+	start_date = 1815.11.9
+	end_date = 1937.1.1
+}
+
+vassal = {
+	first = BRG
+	second = TNJ
+	start_date = 1815.11.9
+	end_date = 1937.1.1
+}
+
+vassal = {
+	first = BRG
+	second = BUT
+	start_date = 1815.11.9
+	end_date = 1937.1.1
+}
+
+vassal = {
+	first = BRG
+	second = GOW
+	start_date = 1815.11.9
+	end_date = 1937.1.1
+}
