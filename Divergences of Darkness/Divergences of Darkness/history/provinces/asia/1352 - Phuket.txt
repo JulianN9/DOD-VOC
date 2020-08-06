@@ -1,6 +1,6 @@
 owner = BRG
 controller = BRG
-add_core = SIA
+add_core = LIG
 trade_goods = timber
 life_rating = 35
 colonial = 1

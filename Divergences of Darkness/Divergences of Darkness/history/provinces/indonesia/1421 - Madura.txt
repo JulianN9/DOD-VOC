@@ -1,6 +1,7 @@
 owner = VOC
 controller = VOC
 add_core = VOC
+add_core = YOG
 add_core = NUS
 trade_goods = sulphur
 life_rating = 35

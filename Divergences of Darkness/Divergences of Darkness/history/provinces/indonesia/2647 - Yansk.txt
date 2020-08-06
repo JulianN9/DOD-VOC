@@ -1,6 +1,6 @@
 owner = DUA
 controller = DUA
-add_core = BAL
+add_core = TMR
 add_core = NUS
 trade_goods = fish
 life_rating = 35

@@ -1,6 +1,5 @@
 owner = MAG
 controller = MAG
-add_core = SUL
 add_core = MAG
 trade_goods = iron
 life_rating = 35

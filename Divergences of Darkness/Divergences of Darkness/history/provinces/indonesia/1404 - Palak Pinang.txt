@@ -1,6 +1,5 @@
 owner = VOC
 controller = VOC
-add_core = ATJ
 add_core = VOC
 add_core = NUS
 trade_goods = timber

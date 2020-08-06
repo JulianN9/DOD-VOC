@@ -1,6 +1,6 @@
 owner = VOC
 controller = VOC
 add_core = VOC
-add_core = PPU
+add_core = MLC
 trade_goods = fish
 life_rating = 30

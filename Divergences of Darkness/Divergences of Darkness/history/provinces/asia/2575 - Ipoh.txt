@@ -1,6 +1,5 @@
 owner = PAT
 controller = PAT
-add_core = JOH
 add_core = PAT
 add_core = NUS
 trade_goods = timber

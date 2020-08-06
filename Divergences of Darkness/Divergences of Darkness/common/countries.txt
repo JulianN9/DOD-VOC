@@ -152,6 +152,9 @@ BLG     = "countries/Bulungan.txt"
 TNJ     = "countries/Tanjungpura.txt"
 LYM     = "countries/Longyamen.txt"
 MAG     = "countries/Maguindanao.txt"
+BNJ     = "countries/Banjar.txt"
+MLC     = "countries/Mollucas.txt"
+MNL     = "countries/Maniolas.txt"
 
 ##HPM
 PPG		="countries/Papua New Guinea.txt"

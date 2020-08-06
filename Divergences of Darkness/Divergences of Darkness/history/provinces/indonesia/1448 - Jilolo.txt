@@ -1,7 +1,6 @@
 owner = TER
 controller = TER
 add_core = TER
-add_core = MKS
 add_core = NUS
 trade_goods = fish
 life_rating = 31

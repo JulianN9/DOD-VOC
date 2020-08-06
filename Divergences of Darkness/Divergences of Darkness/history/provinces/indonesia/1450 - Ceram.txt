@@ -2,6 +2,6 @@ owner = VOC
 controller = VOC
 add_core = VOC
 add_core = NUS
-add_core = MKS
+add_core = MLC
 trade_goods = grain
 life_rating = 32

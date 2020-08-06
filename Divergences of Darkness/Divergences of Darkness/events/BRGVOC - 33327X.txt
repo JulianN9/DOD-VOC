@@ -1,0 +1,81 @@
+country_event = {
+		
+	id = 333270 # Burgundy civil war releases the VOC
+	
+	is_triggered_only = yes
+
+	trigger = {
+		tag = VOC
+		has_global_flag = JEAN_CIVIL_WAR_BEGINNING
+		NOT = { has_global_flag = VOC_TROUBLES}
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	title = "333270.T"
+	desc = "333270.D"
+	picture = "?"
+
+	immediate = {
+		set_global_flag = VOC_TROUBLES
+	}
+
+	option = {
+		name = "333270.A"
+		VOC = {
+			release_vassal = THIS
+			create_vassal = TNJ
+			create_vassal = BLG
+			create_vassal = YOG
+			create_vassal = BTM
+			create_vassal = PLM
+			create_vassal = GOW
+			create_vassal = BUT
+		}
+		country_event = {
+			id = 333271
+			days = 15
+		}
+	}
+}
+
+country_event = {
+		
+	id = 333271 #
+	
+	is_triggered_only = yes
+
+
+	title = "333271.T"
+	desc = "333271.D"
+	picture = "?"
+		
+	option = {
+		name = "333271.A" # At last
+		prestige = 5
+		random_list = {
+			5 = {
+				any_country = {
+					limit = {
+						vassal_of = ROOT
+					}
+					release_vassal = THIS
+					war = {
+						target = ROOT
+						attacker_goal = {
+							casus_belli = conquest
+						}
+						defender_goal = {
+							casus_belli = conquest
+						}
+					}
+				}
+			}
+			5 = {
+				prestige = 1
+			}
+		}
+	}
+}

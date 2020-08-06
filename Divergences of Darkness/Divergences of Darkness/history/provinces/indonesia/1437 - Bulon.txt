@@ -1,7 +1,6 @@
 owner = BUT
 controller = BUT
 add_core = BUT
-add_core = MKS
 add_core = NUS
 trade_goods = fish
 life_rating = 30
