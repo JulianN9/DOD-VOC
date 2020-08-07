@@ -43,7 +43,7 @@ country_event = {
 
 country_event = {
 		
-	id = 333271 #
+	id = 333271 # Princes might rise up
 	
 	is_triggered_only = yes
 
@@ -54,28 +54,1141 @@ country_event = {
 		
 	option = {
 		name = "333271.A" # At last
-		prestige = 5
 		random_list = {
 			5 = {
 				any_country = {
 					limit = {
-						vassal_of = ROOT
+						vassal_of = THIS
 					}
-					release_vassal = THIS
-					war = {
-						target = ROOT
-						attacker_goal = {
-							casus_belli = conquest
+					country_event = 333272
+				}
+			}
+			5 = {
+				if = {
+					limit = {
+						DUA = {
+							is_greater_power = yes
 						}
-						defender_goal = {
-							casus_belli = conquest
+					}
+					DUA = {
+						country_event = {
+							id = 333273
+							days = 15
+						}
+					}
+				}
+				else_if = {
+					limit ={
+						SCA = {
+							is_greater_power = yes
+						}
+					}
+					SCA = {
+						country_event = {
+							id = 333273
+							days = 15
 						}
 					}
 				}
 			}
-			5 = {
-				prestige = 1
+		}
+	}
+}
+
+country_event = {
+		
+	id = 333272 # Vassals attack VOC
+	
+	is_triggered_only = yes
+
+
+	title = "333272.T"
+	desc = "333272.D"
+	picture = "?"
+		
+	option = {
+		name = "333271.A" #
+		release_vassal = THIS
+		war = {
+			target = FROM
+			attacker_goal = {
+				casus_belli = conquest
 			}
+			defender_goal = {
+				casus_belli = conquest
+			}
+			call_ally = no
+		}
+	}
+}
+
+country_event = {
+		
+	id = 333273 # DUA or SCA intervene
+	
+	is_triggered_only = yes
+
+
+	title = "333273.T"
+	desc = "333273.D"
+	picture = "?"
+		
+	option = {
+		name = "333273.A" #
+		treasury = -100000
+		random_list = {
+			60 = {
+				any_country = {
+					limit = {
+						vassal_of = VOC
+					}
+					country_event = 333272
+				}
+			}
+			40  = {
+				VOC = {
+					country_event = 333281
+				}
+			}
+			if = {
+				limit = {
+					tag = DUA
+				}
+				set_global_flag = VOC_REVOLT_DUA
+			}
+			else_if = {
+				limit = {
+					tag = SCA
+				}
+				set_global_flag = VOC_REVOLT_SCA
+			}
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0.5
+				war_policy = pacifism
+			}
+		}
+	}
+
+	option = {
+		name = "333273.B" #
+		if = {
+			limit = {
+				tag = DUA
+				FROM = {
+					tag = VOC
+				}
+			}
+			SCA = {
+				country_event = 333273
+			}
+		}
+		else_if = {
+			limit = {
+				tag = SCA
+				FROM = {
+					tag = VOC
+				}
+			}
+			DUA = {
+				country_event = 333273
+			}
+		}
+		else = {
+			VOC = {
+				country_event = 333281
+			}
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+}
+
+country_event = {
+		
+	id = 333274 # Burgundy civil war releases the VOC
+	
+	trigger = {
+		OR = {
+			tag = TNJ
+			tag = BLG
+			tag = YOG
+			tag = BTM
+			tag = PLM
+			tag = GOW
+			tag = BUT
+		}
+		has_global_flag = VOC_TROUBLES
+		owns = 1413
+		controls = 1413
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "333274.T"
+	desc = "333274.D"
+	picture = "?"
+
+	major = yes
+
+	immediate = {
+		change_tag = NUS
+		if = {
+			limit = {
+				has_global_flag = VOC_REVOLT_DUA
+			}
+			DUA = {
+				country_event = {
+					id = 333278
+					days = 30
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = VOC_REVOLT_SCA
+			}
+			SCA = {
+				country_event = {
+					id = 333278
+					days = 30
+				}
+			}
+		}
+		clr_global_flag = VOC_TROUBLES
+	}
+
+	option = {
+		name = "333274.A"
+		if = {
+			limit = {
+				exists = TNJ
+			}
+			TNJ = {
+				country_event = 333275
+			}
+		}
+		if = {
+			limit = {
+				exists = BLG
+			}
+			BLG = {
+				country_event = 333275
+			}
+		}
+		if = {
+			limit = {
+				exists = YOG
+			}
+			YOG = {
+				country_event = 333275
+			}
+		}		
+		if = {
+			limit = {
+				exists = BTM
+			}
+			BTM = {
+				country_event = 333275
+			}
+		}
+		if = {
+			limit = {
+				exists = PLM
+			}
+			PLM = {
+				country_event = 333275
+			}
+		}
+		if = {
+			limit = {
+				exists = GOW
+			}
+			GOW = {
+				country_event = 333275
+			}
+		}
+		if = {
+			limit = {
+				exists = BUT
+			}
+			BUT = {
+				country_event = 333275
+			}
+		}
+	}
+}
+
+country_event = {
+		
+	id = 333275 # Indonesian princes are annexed
+	
+	is_triggered_only = yes
+
+	title = "333275.T"
+	desc = "333275.D"
+	picture = "?"
+
+	option = {
+		name = "333275.A"
+		FROM = {
+			inherit = THIS
+		}
+		NUS = {
+			country_event = 333276
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = {
+		name = "333275.B"
+		NUS = {
+			country_event = 333277
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 5
+				OR = {
+					tag = GOW
+					tag = BUT
+					tag = BLG
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+		
+	id = 333276 # Indonesian princes accepts annexation
+	
+	is_triggered_only = yes
+
+	title = "333276.T"
+	desc = "333276.D"
+	picture = "?"
+
+	option = {
+		name = "333276.A"
+	}
+}
+
+country_event = {
+		
+	id = 333277 # Indonesian princes refuses annexation
+	
+	is_triggered_only = yes
+
+	title = "333277.T"
+	desc = "333277.D"
+	picture = "?"
+
+	option = {
+		name = "333277.A"
+	}
+}
+
+country_event = {
+		
+	id = 333278 # DUA/SCA gets options 
+	
+	is_triggered_only = yes
+
+	title = "333278.T"
+	desc = "333278.D"
+	picture = "?"
+
+	immediate = {
+		diplomatic_influence = {
+			who = FROM
+			value = 200
+		}
+	}
+
+	option = {
+		name = "333278.A" #let it go
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 3
+				FROM = {
+					tag = VOC
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "333278.B" # We demand the mollucas and sulawasi
+		badboy = 5
+		if = {
+			limit = {
+				exists = GOW
+			}
+			inherit = GOW
+		}
+		else = {
+			1432 = {
+				secede_province = THIS
+			}
+			1431 = {
+				secede_province = THIS
+			}
+			1436 = {
+				secede_province = THIS
+			}
+		}
+		if = {
+			limit = {
+				exists = BUT
+			}
+			inherit = BUT
+		}
+		else = {
+			1437 = {
+				secede_province = THIS
+			}
+		}
+		1430 = {
+			secede_province = THIS
+		}
+		FROM = {
+			country_event = 333279
+			if = {
+				limit = {
+					not = { exists = MLC }
+				}
+				release = MLC
+				THIS = {
+					inherit = MLC
+				}	
+			}
+		}
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 3
+				FROM = {
+					tag = VOC
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "333278.C"
+		badboy = 10
+		if = {
+			limit = {
+				FROM = VOC
+			}
+			badboy = 10
+		}
+		casus_belli = {
+			target = FROM
+			type = conquest
+		}
+		FROM = {
+			country_event = 333280
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				FROM = {
+					ai = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+		
+	id = 333279 # NUS notified of DUA/SCA taking sulawasi
+	
+	is_triggered_only = yes
+
+	title = "333276.T"
+	desc = "333276.D"
+	picture = "?"
+
+	option = {
+		name = "333276.A"
+	}
+}
+
+country_event = {
+		
+	id = 333280 # NUS notified of DUA/SCA (FROM) claiming all of their land
+	
+	is_triggered_only = yes
+
+	title = "333280.T"
+	desc = "333280.D"
+	picture = "?"
+
+	option = {
+		name = "333280.A"
+	}
+}
+
+country_event = {
+		
+	id = 333281 # Groot VOC
+	
+	trigger = {
+		tag = VOC
+		NOT = {
+			AND = {
+				exists = TNJ
+				exists = BLG
+				exists = YOG
+				exists = BTM
+				exists = PLM
+				exists = GOW
+				exists = BUT
+			}
+		}
+		has_global_flag = VOC_TROUBLES
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "333281.T"
+	desc = "333281.D"
+	picture = "?"
+
+	immediate = {
+		clr_global_flag = VOC_TROUBLES
+		set_global_flag = VOC_GROOT
+	}
+
+	option = {
+		name = "333281.A"
+	}
+}
+
+country_event = {
+		
+	id = 333281 # Status quo VOC
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "333281.T"
+	desc = "333281.D"
+	picture = "?"
+
+	immediate = {
+		clr_global_flag = VOC_TROUBLES
+		set_global_flag = VOC_SQ
+	}
+
+	option = {
+		name = "333281.A"
+	}
+}
+
+country_event = {
+		
+	id = 333282 # Burgundy demands to annex VOC or attacks NUS
+
+	trigger = {
+		OR = {
+			AND = {
+				tag = BRG
+				not = { exists = PBG }
+			}
+			AND = {
+				tag = PBG
+				not = { exists = BRG }
+			}
+		}
+		OR = {
+			has_global_flag = VOC_GROOT
+			has_global_flag = VOC_SQ
+			exists = NUS
+			has_global_flag = BCW_AVOIDED
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 90
+	}
+
+	title = "333282.T"
+	desc = "333282.D"
+	picture = "?"
+
+
+	option = {
+		name = "333282.A"
+		if = {
+			limit = {
+				exists = VOC
+			}
+			VOC = {
+				country_event = 333283
+			}
+		}
+		else_if = {
+			limit = {
+				exists = NUS
+			}
+			casus_belli = {
+				target = NUS
+				type = establish_protectorate_casus_belli
+			}
+		}
+	}
+}
+
+country_event = {
+		
+	id = 333283 # VOC responds
+
+	is_triggered_only = yes
+
+	title = "333283.T"
+	desc = "333283.D"
+	picture = "?"
+
+
+	option = {
+		name = "333283.A"
+		FROM = {
+			inherit = THIS
+		}
+		set_global_flag = VOC_REBELLION
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 7
+				has_global_flag = VOC_SQ
+			}
+		}
+	}
+
+	option = {
+		name = "333283.B"
+		if = {
+			limit = {
+				DUA = {
+					is_greater_power = yes
+				}
+			}
+			DUA = {
+				country_event = {
+					id = 333284
+					days = 15
+				}
+			}
+		}
+		else_if = {
+			limit ={
+				SCA = {
+					is_greater_power = yes
+				}
+			}
+			SCA = {
+				country_event = {
+					id = 333284
+					days = 15
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 3
+				has_global_flag = VOC_SQ
+			}
+			modifier = {
+				factor = 0
+				has_global_flag = BCW_AVOIDED
+			}
+		}
+	}
+}
+
+country_event = {
+		
+	id = 333284 # SCA/DUA responds
+
+	is_triggered_only = yes
+
+	title = "333284.T"
+	desc = "333284.D"
+	picture = "?"
+
+
+	option = {
+		name = "333284.A"
+		create_alliance = VOC
+		if = {
+			limit = {
+				has_global_flag = VOC_REVOLT_DUA
+				tag = SCA
+			}
+			clr_global_flag = VOC_REVOLT_DUA
+			set_global_flag = VOC_REVOLT_SCA
+		}
+		else_if = {
+			limit = {
+				has_global_flag = VOC_REVOLT_SCA
+				tag = DUA
+			}
+			clr_global_flag = VOC_REVOLT_SCA
+			set_global_flag = VOC_REVOLT_DUA
+		}
+		FROM = {
+			country_event = 333285
+		}
+		if = {
+			limit = {
+				exists = BRG
+				NOT = { exists = PBG }
+			}
+			BRG = {
+				country_event = 333287
+			}
+		}
+		else_if = {
+			limit = {
+				exists = PBG
+				NOT = { exists = BRG}
+			} 
+			PBG = {
+				country_event = 333287
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 3
+				OR = {
+					AND = {
+						has_global_flag = VOC_REVOLT_SCA
+						tag = DUA
+					}
+					AND = {
+						has_global_flag = VOC_REVOLT_DUA
+						tag = SCA
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						has_global_flag = VOC_REVOLT_DUA
+						tag = DUA
+					}
+					AND = {
+						has_global_flag = VOC_REVOLT_SCA
+						tag = SCA
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "333284.B" #
+		if = {
+			limit = {
+				tag = DUA
+				FROM = {
+					tag = VOC
+				}
+			}
+			SCA = {
+				country_event = 333284
+			}
+		}
+		else_if = {
+			limit = {
+				tag = SCA
+				FROM = {
+					tag = VOC
+				}
+			}
+			DUA = {
+				country_event = 333284
+			}
+		}
+		else = {
+			VOC = {
+				country_event = 333286
+			}
+			if = {
+				limit = {
+					exists = BRG
+					NOT = { exists = PBG }
+				}
+				BRG = {
+					country_event = 333287
+				}
+			}
+			else_if = {
+				limit = {
+					exists = PBG
+					NOT = { exists = BRG}
+				}
+				PBG = {
+					country_event = 333287
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = VOC_REVOLT_DUA
+				}
+				clr_global_flag = VOC_REVOLT_DUA
+			}
+			else_if = {
+				limit = {
+					has_global_flag = VOC_REVOLT_SCA
+				}
+				clr_global_flag = VOC_REVOLT_SCA
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				VOC = {
+					ai = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+		
+	id = 333285 # SCA/DUA accepts
+	
+	is_triggered_only = yes
+
+	title = "333285.T"
+	desc = "333285.D"
+	picture = "?"
+
+	option = {
+		name = "333285.A"
+	}
+}
+
+country_event = {
+		
+	id = 333286 # VOC stands alone
+	
+	is_triggered_only = yes
+
+	title = "333286.T"
+	desc = "333286.D"
+	picture = "?"
+
+	option = {
+		name = "333286.A"
+	}
+}
+
+country_event = {
+		
+	id = 333287 # BRG/PBG decides whether to attack VOC
+	
+	is_triggered_only = yes
+
+	title = "333287.T"
+	desc = "333287.D"
+	picture = "?"
+
+	immediate = {
+		set_global_flag = VOC_REBELLION
+	}
+
+	option = {
+		name = "333287.A"
+		war = {
+			target = VOC
+			attacker_goal = {
+				casus_belli = conquest
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0.5
+				FROM = {
+					tag = DUA
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "333287.B"
+		prestige = -10
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						VOC = {
+							alliance_with = DUA
+						}
+						VOC = {
+							alliance_with = SCA
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+		
+	id = 333288 # VOC victorious
+	
+	trigger = {
+		has_global_flag = VOC_REBELLION
+		tag = VOC
+		war = no
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	title = "333288.T"
+	desc = "333288.D"
+	picture = "?"
+
+	immediate = {
+		clr_global_flag = VOC_REBELLION
+		TNJ = {
+			any_core = {
+				add_core = VOC
+			}
+		}
+		BLG = {
+			any_core = {
+				add_core = VOC
+			}
+		}
+		YOG = {
+			any_core = {
+				add_core = VOC
+			}
+		}
+		BTM = {
+			any_core = {
+				add_core = VOC
+			}
+		}
+		PLM = {
+			any_core = {
+				add_core = VOC
+			}
+		}
+		GOW = {
+			any_core = {
+				add_core = VOC
+			}
+		}
+		BUT = {
+			any_core = {
+				add_core = VOC
+			}
+		}
+		DEL = {
+			any_core = {
+				add_core = VOC
+			}
+		}
+		ATJ = {
+			any_core = {
+				add_core = VOC
+			}
+		}
+		PAG = {
+			any_core = {
+				add_core = VOC
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = VOC_REVOLT_DUA
+			}
+			DUA = {
+				country_event = {
+					id = 333278
+					days = 30
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = VOC_REVOLT_SCA
+			}
+			SCA = {
+				country_event = {
+					id = 333278
+					days = 30
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "333288.A"
+		if = {
+			limit = {
+				exists = TNJ
+				vassal_of = VOC
+			}
+			inherit = TNJ
+		}
+		if = {
+			limit = {
+				exists = BLG
+				vassal_of = VOC
+			}
+			inherit = BLG
+		}
+		if = {
+			limit = {
+				exists = YOG
+				vassal_of = VOC
+			}
+			inherit = YOG
+		}
+		if = {
+			limit = {
+				exists = BTM
+				vassal_of = VOC
+			}
+			inherit = BTM
+		}
+		if = {
+			limit = {
+				exists = PLM
+				vassal_of = VOC
+			}
+			inherit = PLM
+		}
+		if = {
+			limit = {
+				exists = GOW
+				vassal_of = VOC
+			}
+			inherit = GOW
+		}
+		if = {
+			limit = {
+				exists = BUT
+				vassal_of = VOC
+			}
+			inherit = BUT
+		}
+	}
+}
+
+country_event = {
+		
+	id = 333289 # BRG victorious
+	
+	trigger = {
+		has_global_flag = VOC_REBELLION
+		OR = {
+			tag = BRG
+			tag = PBG
+		}
+		NOT = { exists = VOC }
+		war = no
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	title = "333289.T"
+	desc = "333289.D"
+	picture = "?"
+
+	immediate = {
+		clr_global_flag = VOC_REBELLION
+		VOC = {
+			any_core = {
+				remove_core = VOC
+			}
+		}
+		set_global_flag = BRG_VOC
+	}
+
+	option = {
+		name = "333289.A"
+		if = {
+			limit = {
+				exists = TNJ
+			}
+			create_vassal = TNJ
+		}
+		if = {
+			limit = {
+				exists = BLG
+			}
+			create_vassal = BLG
+		}
+		if = {
+			limit = {
+				exists = YOG
+			}
+			create_vassal = YOG
+		}
+		if = {
+			limit = {
+				exists = BTM
+			}
+			create_vassal = BTM
+		}
+		if = {
+			limit = {
+				exists = PLM
+			}
+			create_vassal = PLM
+		}
+		if = {
+			limit = {
+				exists = GOW
+			}
+			create_vassal = GOW
+		}
+		if = {
+			limit = {
+				exists = BUT
+			}
+			create_vassal = BUT
 		}
 	}
 }
