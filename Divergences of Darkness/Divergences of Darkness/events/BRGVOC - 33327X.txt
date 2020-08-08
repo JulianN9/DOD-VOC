@@ -7,7 +7,15 @@ country_event = {
 	trigger = {
 		tag = VOC
 		has_global_flag = JEAN_CIVIL_WAR_BEGINNING
-		NOT = { has_global_flag = VOC_TROUBLES}
+		NOT = { 
+			OR = {
+				has_global_flag = VOC_TROUBLES
+				has_global_flag = VOC_SQ
+				has_global_flag = VOC_GROOT
+				has_global_flag = VOC_ANNEXATION
+				has_global_flag = VOC_FREE
+			}
+		}
 	}
 
 	mean_time_to_happen = {
@@ -63,7 +71,7 @@ country_event = {
 					country_event = 333272
 				}
 			}
-			5 = {
+			95 = {
 				DUA = {
 					country_event = {
 						id = 333273
@@ -356,7 +364,13 @@ country_event = {
 					war = no
 				}
 			}
-			has_global_flag = VOC_FREE
+			AND = {
+				has_global_flag = VOC_FREE
+				VOC = {
+					exists = yes
+					war = no
+				}
+			}
 		}
 	}
 
@@ -559,11 +573,26 @@ country_event = {
 			}
 		}
 		OR = {
-			has_global_flag = VOC_GROOT
-			has_global_flag = VOC_SQ
 			exists = NUS
-			has_global_flag = BCW_AVOIDED
+			AND = {
+				exists = VOC
+				OR = {
+					has_global_flag = VOC_GROOT
+					has_global_flag = VOC_SQ
+					has_global_flag = BCW_AVOIDED
+				}
+			}
 		}
+		NOT = {
+			OR = {
+				has_global_flag = VOC_ANNEXATION
+				has_global_flag = VOC_FREE
+			}
+		}		
+	}
+
+	immediate = {
+		set_global_flag = VOC_ANNEXATION
 	}
 
 	mean_time_to_happen = {
@@ -589,7 +618,7 @@ country_event = {
 
 country_event = {
 		
-	id = 333285 # VOC responds
+	id = 333285 # VOC responds to annexation deamnds
 
 	is_triggered_only = yes
 
@@ -603,7 +632,6 @@ country_event = {
 		FROM = {
 			inherit = THIS
 		}
-		set_global_flag = VOC_REBELLION
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -637,7 +665,7 @@ country_event = {
 
 country_event = {
 		
-	id = 333286 # SCA/DUA responds
+	id = 333286 # DUA responds
 
 	is_triggered_only = yes
 
@@ -710,7 +738,7 @@ country_event = {
 
 country_event = {
 		
-	id = 333287 # SCA/DUA responds
+	id = 333287 # SCA responds
 
 	is_triggered_only = yes
 
@@ -829,12 +857,10 @@ country_event = {
 	desc = "333290.D"
 	picture = "?"
 
-	immediate = {
-		set_global_flag = VOC_REBELLION
-	}
 
 	option = {
 		name = "333290.A"
+		set_global_flag = VOC_REBELLION
 		war = {
 			target = VOC
 			attacker_goal = {
@@ -882,9 +908,18 @@ country_event = {
 	id = 333291 # VOC victorious
 	
 	trigger = {
-		has_global_flag = VOC_REBELLION
 		tag = VOC
 		war = no
+		OR = {
+			has_global_flag = VOC_REBELLION
+			NOT = {
+				AND = {
+					exists = BRG
+					exists = PBG
+				}
+			}
+		}
+		NOT = { has_global_flag = VOC_FREE }
 	}
 
 	mean_time_to_happen = {
@@ -896,6 +931,7 @@ country_event = {
 	picture = "?"
 
 	immediate = {
+		clr_global_flag = VOC_ANNEXATION
 		clr_global_flag = VOC_REBELLION
 		set_global_flag = VOC_FREE
 		TNJ = {
@@ -967,7 +1003,7 @@ country_event = {
 	id = 333292 # BRG victorious
 	
 	trigger = {
-		has_global_flag = VOC_REBELLION
+		has_global_flag = VOC_ANNEXATION
 		OR = {
 			tag = BRG
 			tag = PBG
@@ -985,7 +1021,7 @@ country_event = {
 	picture = "?"
 
 	immediate = {
-		clr_global_flag = VOC_REBELLION
+		clr_global_flag = VOC_ANNEXATION
 		VOC = {
 			all_core = {
 				remove_core = VOC
