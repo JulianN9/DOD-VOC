@@ -34,6 +34,7 @@ country_event = {
 		name = "333270.A"
 		VOC = {
 			release_vassal = THIS
+			leave_alliance = BRG
 			create_vassal = TNJ
 			create_vassal = BLG
 			create_vassal = YOG
@@ -97,6 +98,12 @@ country_event = {
 	option = {
 		name = "333271.A" #
 		release_vassal = THIS
+		BRG = {
+			diplomatic_influence = {
+				who  = THIS
+				value = -400
+			}
+		}
 		war = {
 			target = VOC
 			attacker_goal = {
