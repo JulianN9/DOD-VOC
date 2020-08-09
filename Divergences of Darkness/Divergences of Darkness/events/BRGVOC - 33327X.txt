@@ -62,7 +62,7 @@ country_event = {
 	picture = "?"
 		
 	option = {
-		name = "333271.A" # At last
+		name = "333271.A" #
 		random_list = {
 			5 = {
 				any_country = {
@@ -143,7 +143,10 @@ country_event = {
 			}
 			40  = {
 				VOC = {
-					country_event = 333283
+					country_event = {
+						id = 333283
+						days = 60
+					}
 				}
 			}
 		}
@@ -193,7 +196,10 @@ country_event = {
 			}
 			40  = {
 				VOC = {
-					country_event = 333283
+					country_event = {
+						id = 333283
+						days = 60
+					}
 				}
 			}
 		}
@@ -207,9 +213,12 @@ country_event = {
 	}
 
 	option = {
-		name = "333273.B" #
+		name = "333274.B" #
 		VOC = {
-			country_event = 333283
+			country_event = {
+				id = 333283
+				days = 60
+			}
 		}
 		ai_chance = {
 			factor = 70
@@ -920,7 +929,7 @@ country_event = {
 		OR = {
 			has_global_flag = VOC_REBELLION
 			NOT = {
-				AND = {
+				OR = {
 					exists = BRG
 					exists = PBG
 				}
