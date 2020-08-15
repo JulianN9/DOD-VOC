@@ -1,0 +1,138 @@
+political_decisions = {
+	
+	voc_annex_java = {
+		picture = apanage
+
+		potential = {
+			OR = {
+				tag = BRG
+				tag = PBG
+			}
+			OR = {
+				YOG = { vassal_of = THIS exists = yes civilized = no }
+				BTM = { vassal_of = THIS exists = yes civilized = no }
+				PLM = { vassal_of = THIS exists = yes civilized = no }
+			}
+			OR = {
+				has_global_flag = { VOC_SQ }
+				has_global_flag = { BCW_AVOIDED }
+			}
+		}	
+
+		allow = {
+			is_greater_power = yes
+			NOT = { war = yes }
+			owns = 1413
+			nationalism_n_imperialism  = 1
+		}
+		
+		effect = {
+			badboy = 1
+			YOG = {
+				country_event = 333276
+			}
+			BTM = {
+				country_event = 333276
+			}
+			PLM = {
+				country_event = 333276
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	voc_short_declaration = {
+		picture = apanage
+
+		potential = {
+			OR = {
+				tag = BRG
+				tag = PBG
+			}
+			OR = { 
+				TNJ = { vassal_of = THIS exists = yes civilized = no }
+				BLG = { vassal_of = THIS exists = yes civilized = no }
+				GOW = { vassal_of = THIS exists = yes civilized = no }
+				BUT = { vassal_of = THIS exists = yes civilized = no }
+			}
+			OR = {
+				has_global_flag = { VOC_SQ }
+				has_global_flag = { BCW_AVOIDED }
+			}
+		}	
+
+		allow = {
+			is_greater_power = yes
+			NOT = { war = yes }
+			owns = 1413
+			nationalism_n_imperialism  = 1
+			investment_banks = 1
+		}
+		
+		effect = {
+			badboy = 1
+			TNJ = {
+				country_event = 333276
+			}
+			BLG = {
+				country_event = 333276
+			}
+			GOW = {
+				country_event = 333276
+			}
+			BUT = {
+				country_event = 333276
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	voc_claims = {
+		picture = apanage
+
+		potential = {
+			tag = VOC
+			has_global_flag = VOC_FREE
+		}	
+
+		allow = {
+			NOT = { war = yes }
+			VOC = { all_core = { owned_by = THIS } }
+			nationalism_n_imperialism  = 1
+		}
+		
+		effect = {
+			NUS = { all_core = { add_core = THIS } }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	voc_claims = {
+		picture = apanage
+
+		potential = {
+			tag = VOC
+			has_global_flag = VOC_FREE
+		}	
+
+		allow = {
+			NOT = { war = yes }
+			NUS = { all_core = { owned_by = THIS } }
+			nationalism_n_imperialism  = 1
+		}
+		
+		effect = {
+			country_event = 333293
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

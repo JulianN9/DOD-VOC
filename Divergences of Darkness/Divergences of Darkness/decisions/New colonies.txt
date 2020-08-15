@@ -112,6 +112,8 @@ political_decisions = {
 			war = no
 			nationalism_n_imperialism = 1
 			TON = { exists = no }
+			MAG = { exists = no }
+			MNL = { exists = no }
 		}
 		
 		effect = {

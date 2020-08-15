@@ -1,6 +1,6 @@
-capital = 1406
-primary_culture = acenhese
-religion = sunni
+capital = 1460
+primary_culture = filipino
+religion = protestant
 government = absolute_monarchy
 plurality = 0.0
 nationalvalue = nv_tradition
